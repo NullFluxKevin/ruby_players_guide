@@ -1,0 +1,5 @@
+puts "Hello!"
+puts "Ruby is very interesting"
+puts "Also very elegant"
+puts "I like it a lot"
+puts "Better than Python"
