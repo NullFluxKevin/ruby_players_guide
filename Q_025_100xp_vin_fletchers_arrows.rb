@@ -1,3 +1,4 @@
+
 SHAFT_UNIT_PRICE = 0.05
 
 class Arrow
