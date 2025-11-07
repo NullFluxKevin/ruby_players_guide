@@ -1,9 +1,9 @@
 
 class Hangman
 
-  def initialize(extra_guesses, words)
+  def initialize(guesses, words)
     @target_word = words.sample.upcase
-    @remaining_guesses = @target_word.size + extra_guesses
+    @remaining_guesses = guesses
     @masked_word = "_" * @target_word.size
     @wrong_letters = []
   end
@@ -23,9 +23,8 @@ class Hangman
       end
     else
       @wrong_letters.push(letter)
+      @remaining_guesses -= 1
     end
-
-    @remaining_guesses -= 1
 
     true
   end
@@ -72,8 +71,8 @@ end
 if __FILE__ == $0
   words = %w{ immutable game hangman }
 
-  extra_guesses = 3
-  game = Hangman.new(extra_guesses, words)
+  guesses = 3
+  game = Hangman.new(guesses, words)
 
   game.start
 end
